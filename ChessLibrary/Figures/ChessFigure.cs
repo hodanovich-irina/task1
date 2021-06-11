@@ -11,7 +11,13 @@ namespace ChessLibrary.Figures
     /// </summary>
     public enum Color
     {
+        /// <summary>
+        /// Color white
+        /// </summary>
         white = 1,
+        /// <summary>
+        /// Color black
+        /// </summary>
         black
     }
     /// <summary>

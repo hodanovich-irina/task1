@@ -251,6 +251,39 @@ namespace ChessLibrary
 
             return newBoard;
         }
+
+        /// <summary>
+        /// Override method ToString()
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return player.ToString();
+        }
+
+        /// <summary>
+        /// Method overriding GetHashCode()
+        /// </summary>
+        /// <returns>Hash-code</returns>
+        public override int GetHashCode()
+        {
+            return chessFiguresBlack.Count + chessFiguresWhite.Count;
+        }
+
+        /// <summary>
+        /// Method overriding Equals()
+        /// </summary>
+        /// <param name="obj">Object</param>
+        /// <returns>True or false</returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            Chessboard chessboard = (Chessboard)obj;
+            if ( player != chessboard.player || game != chessboard.game || chessFiguresBlack.Count != chessboard.chessFiguresBlack.Count || chessFiguresWhite.Count != chessboard.chessFiguresWhite.Count)
+                return false;
+            return true;
+        }
     }
 }
 
